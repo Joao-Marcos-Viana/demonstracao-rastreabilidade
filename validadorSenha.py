@@ -1,3 +1,15 @@
+import os
+
+def limpar_tela():
+    """
+    Função para limpar a tela do terminal.
+    Funciona tanto no Windows quanto no Linux/Mac.
+    """
+    if os.name == 'nt':  # Windows
+        os.system('cls')
+    else:  # Linux/Mac
+        os.system('clear')
+
 senha = ''
 senhaForte = False
 
@@ -41,3 +53,7 @@ while not senhaForte:
         else:
             print('SENHA FORTE ✔️')
             senhaForte = True
+    
+    input('Pressione qualquer tecla para continuar...')
+    limpar_tela()
+    print("Obrigado por utilizar nosso validador de senha")
